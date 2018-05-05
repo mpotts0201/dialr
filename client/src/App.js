@@ -4,7 +4,7 @@ import SignUpLogIn from './components/SignUpLogIn'
 import axios from 'axios'
 import ContactsList from './components/ContactsList'
 import { clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn } from './util/SessionHeaderUtil'
-
+import NavBar from './components/NavBar'
 
 
 class App extends Component {
@@ -110,10 +110,10 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <NavBar/>
           <Switch>
             <Route exact path="/signUp" render={SignUpLogInComponent} />
             <Route exact path="/contacts" render={ContactsComponent} />
-
           </Switch>
 
           {this.state.signedIn ? <Redirect to='/contacts' /> : <Redirect to="/signUp" />}
