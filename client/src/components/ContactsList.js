@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Contact from "./Contact"
 import styled from 'styled-components'
 
@@ -8,20 +8,25 @@ flex-direction: row;
 flex-wrap: wrap;
 `
 
-const ContactsList = (props) => {
+class ContactsList extends Component {
 
-    const contacts = props.contacts.map((contact) => {
+    render() {
+
         return (
-            <div className='contact-list'><Contact {...contact} deleteContact={props.deleteContact} key={contact.id}/></div>
-        )
-    })
-    return (
-        <div>
-            <h1>Contacts</h1>
+            <div>
+                <h1>Contacts</h1>
 
-            {props.contacts.length > 0 ? contacts : null}
-        </div>
-    )
+                {this.props.contacts.length > 0
+                    ? this.props.contacts.map((contact) => {
+                        return (
+                            <div className='contact-list'><Contact contact={contact} deleteContact={this.props.deleteContact} key={contact.id} /></div>
+                        )
+                    })
+                    : null}
+            </div>
+        )
+ 
+    }
 }
 
 export default ContactsList
