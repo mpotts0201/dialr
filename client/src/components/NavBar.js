@@ -16,7 +16,7 @@ class NavBar extends Component {
     render() {
         return (
 
-            <Navbar brand='dialr' right>
+            <Navbar className='blue' brand='dialr' right>
                 <NavItem onClick={() => console.log('test click')}>Getting started</NavItem>
                 <NavItem href='components.html'>Components</NavItem>
             </Navbar>

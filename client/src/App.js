@@ -6,7 +6,7 @@ import ContactsList from './components/ContactsList'
 import { clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn } from './util/SessionHeaderUtil'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
-import {Button, Icon} from 'react-materialize'
+
 
 class App extends Component {
 
@@ -103,23 +103,26 @@ class App extends Component {
         signUp={this.signUp}
         signIn={this.signIn} />
     )
-    const ContactsComponent = () => (
-      <ContactsList
-        contacts={this.state.contacts} />
-    )
+    const ContactsComponent = (props) => {
+      return <ContactsList {...props}/>
+    }
+
+    const HomeComponent = (props) => {
+      return <Home {...props} signOut={this.signOut} contacts={this.state.contacts}/>
+    }
+
+
 
     return (
       <Router>
         <div>
-          <NavBar/>
           <Switch>
             <Route exact path="/signUp" render={SignUpLogInComponent} />
             <Route exact path="/contacts" render={ContactsComponent} />
-            <Route exact path='/' component={Home}/>
+            <Route exact path='/' render={HomeComponent}/>
           </Switch>
 
-          {this.state.signedIn ? <Redirect to='/contacts' /> : <Redirect to="/signUp" />}
-          <Button onClick={this.signOut} waves='light'>Sign Out<Icon left>exit_to_app</Icon></Button>
+          {this.state.signedIn ? <Redirect to='/' /> : <Redirect to="/signUp" />}
         </div>
       </Router>
     )
