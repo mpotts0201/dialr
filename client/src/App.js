@@ -32,6 +32,7 @@ class App extends Component {
   getContacts = async () => {
     try {
         const response = await axios.get('/api/contacts')
+        this.setState({contacts: response.data})
         return response.data
     } catch (error) {
         console.log(error)
@@ -108,7 +109,10 @@ class App extends Component {
     }
 
     const HomeComponent = (props) => {
-      return <Home {...props} signOut={this.signOut} contacts={this.state.contacts}/>
+      return <Home {...props} signOut={this.signOut} 
+      contacts={this.state.contacts}
+      getContacts={this.getContacts}
+      />
     }
 
 
