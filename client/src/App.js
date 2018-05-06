@@ -5,7 +5,8 @@ import axios from 'axios'
 import ContactsList from './components/ContactsList'
 import { clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn } from './util/SessionHeaderUtil'
 import NavBar from './components/NavBar'
-
+import Home from './components/Home'
+import {Button, Icon} from 'react-materialize'
 
 class App extends Component {
 
@@ -114,11 +115,11 @@ class App extends Component {
           <Switch>
             <Route exact path="/signUp" render={SignUpLogInComponent} />
             <Route exact path="/contacts" render={ContactsComponent} />
+            <Route exact path='/' component={Home}/>
           </Switch>
 
           {this.state.signedIn ? <Redirect to='/contacts' /> : <Redirect to="/signUp" />}
-          <button onClick={this.signOut}>Sign Out</button>
-
+          <Button onClick={this.signOut} waves='light'>Sign Out<Icon left>save</Icon></Button>
         </div>
       </Router>
     )

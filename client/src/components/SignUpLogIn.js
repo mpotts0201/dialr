@@ -1,4 +1,5 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
+import { Button, Icon } from 'react-materialize'
 
 class SignUpLogIn extends Component {
 
@@ -26,7 +27,7 @@ class SignUpLogIn extends Component {
     }
 
     handleChange = (event) => {
-        const newState = {...this.state}
+        const newState = { ...this.state }
         newState[event.target.name] = event.target.value
         this.setState(newState)
     }
@@ -37,20 +38,23 @@ class SignUpLogIn extends Component {
                 <form>
                     <div>
                         <label htmlFor="email">E-mail: </label>
-                        <input onChange={this.handleChange} type="text" name="email" value={this.state.email}/>
+                        <input onChange={this.handleChange} type="text" name="email" value={this.state.email} />
                     </div>
                     <div>
                         <label htmlFor="password">Password: </label>
-                        <input onChange={this.handleChange} type="password" name="password" value={this.state.password}/>
+                        <input onChange={this.handleChange} type="password" name="password" value={this.state.password} />
                     </div>
                     <div>
                         <label htmlFor="password_confirmation">Confirm Password: </label>
                         <input onChange={this.handleChange} type="password" name="password_confirmation"
-                               value={this.state.password_confirmation}/>
+                            value={this.state.password_confirmation} />
                     </div>
 
-                    <button onClick={this.signUp}>Sign Up</button>
-                    <button onClick={this.signIn}>Log In</button>
+                    <Button onClick={this.signUp} waves='light'>Sign Up<Icon left>save</Icon></Button>
+
+                    <Button onClick={this.signIn} waves='light'>Sign In<Icon left>save</Icon></Button>
+                    {/* <RaisedButton onClick={this.signUp} label="Sign Up" />
+                    <RaisedButton onClick={this.signIn} label="Log In" /> */}
                 </form>
             </div>
         )
