@@ -26,3 +26,15 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.card{
+  
+  width: 40vw;
+  margin: 30px auto;
+}
+
+/* .contact-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+} */

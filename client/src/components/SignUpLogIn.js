@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Icon } from 'react-materialize'
+import { Button, Icon, Input } from 'react-materialize'
 
 class SignUpLogIn extends Component {
 
@@ -35,20 +35,14 @@ class SignUpLogIn extends Component {
     render() {
         return (
             <div>
+                <h1>dialr</h1>
                 <form>
-                    <div>
-                        <label htmlFor="email">E-mail: </label>
-                        <input onChange={this.handleChange} type="text" name="email" value={this.state.email} />
-                    </div>
-                    <div>
-                        <label htmlFor="password">Password: </label>
-                        <input onChange={this.handleChange} type="password" name="password" value={this.state.password} />
-                    </div>
-                    <div>
-                        <label htmlFor="password_confirmation">Confirm Password: </label>
-                        <input onChange={this.handleChange} type="password" name="password_confirmation"
-                            value={this.state.password_confirmation} />
-                    </div>
+                    <Input s={6} onChange={this.handleChange} label='Email' name="email" value={this.state.email} />
+
+                    <Input s={6} onChange={this.handleChange} label='Password' name="password" value={this.state.password} />
+                    
+                    <Input s={6} onChange={this.handleChange} label='Confirm Password' name="password_confirmation"
+                        value={this.state.password_confirmation} />
 
                     <Button onClick={this.signUp} waves='light'>Sign Up<Icon left>person_add</Icon></Button>
 

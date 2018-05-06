@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom'
 import SignUpLogIn from './components/SignUpLogIn'
 import axios from 'axios'
+import './App.css'
 import ContactsList from './components/ContactsList'
 import { clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn } from './util/SessionHeaderUtil'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
-
+import ShowContact from './components/ShowContact'
 
 class App extends Component {
 
@@ -119,11 +120,12 @@ class App extends Component {
 
     return (
       <Router>
-        <div>
+        <div className='App'>
           <Switch>
             <Route exact path="/signUp" render={SignUpLogInComponent} />
             <Route exact path="/contacts" render={ContactsComponent} />
             <Route exact path='/' render={HomeComponent}/>
+            <Route exact path='/contacts/:id' component={ShowContact} />
           </Switch>
 
           {this.state.signedIn ? <Redirect to='/' /> : <Redirect to="/signUp" />}

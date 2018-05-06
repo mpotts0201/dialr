@@ -1,11 +1,18 @@
 import React from 'react'
 import Contact from "./Contact"
+import styled from 'styled-components'
+
+const Div = styled.div`
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+`
 
 const ContactsList = (props) => {
 
     const contacts = props.contacts.map((contact) => {
         return (
-            <Contact {...contact} deleteContact={props.deleteContact} key={contact.id}/>
+            <div className='contact-list'><Contact {...contact} deleteContact={props.deleteContact} key={contact.id}/></div>
         )
     })
     return (

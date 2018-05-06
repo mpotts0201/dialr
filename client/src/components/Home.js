@@ -46,7 +46,8 @@ class Home extends Component {
         }
 
         const response = await axios.post('/api/contacts', payload)
-        await this.getContacts()
+        const contacts = await this.getContacts()
+        
     }
 
     getContacts = () => {
