@@ -50,9 +50,9 @@ class SignUpLogIn extends Component {
                             value={this.state.password_confirmation} />
                     </div>
 
-                    <Button onClick={this.signUp} waves='light'>Sign Up<Icon left>save</Icon></Button>
+                    <Button onClick={this.signUp} waves='light'>Sign Up<Icon left>person_add</Icon></Button>
 
-                    <Button onClick={this.signIn} waves='light'>Sign In<Icon left>save</Icon></Button>
+                    <Button onClick={this.signIn} waves='light'>Log In<Icon left>person</Icon></Button>
                     {/* <RaisedButton onClick={this.signUp} label="Sign Up" />
                     <RaisedButton onClick={this.signIn} label="Log In" /> */}
                 </form>

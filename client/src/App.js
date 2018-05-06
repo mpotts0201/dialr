@@ -119,7 +119,7 @@ class App extends Component {
           </Switch>
 
           {this.state.signedIn ? <Redirect to='/contacts' /> : <Redirect to="/signUp" />}
-          <Button onClick={this.signOut} waves='light'>Sign Out<Icon left>save</Icon></Button>
+          <Button onClick={this.signOut} waves='light'>Sign Out<Icon left>exit_to_app</Icon></Button>
         </div>
       </Router>
     )
