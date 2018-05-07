@@ -15,6 +15,7 @@ class Home extends Component {
         email: '',
         phone: '',
         address: '',
+        contactType: '',
 
     }
 
@@ -47,7 +48,7 @@ class Home extends Component {
 
         const response = await axios.post('/api/contacts', payload)
         const contacts = await this.getContacts()
-        
+
     }
 
     getContacts = () => {
@@ -58,7 +59,15 @@ class Home extends Component {
         return (
             <div>
                 <NavBar/>
-                <ContactsList contacts={this.props.contacts}/>
+                <ContactsList contacts={this.props.contacts}
+                handleChange={this.handleChange}
+                first_name={this.state.first_name}
+                last_name={this.state.last_name}
+                phone={this.state.phone}
+                email={this.state.email}
+                address={this.state.address}
+                getContacts={this.props.getContacts}
+                />
                 <Button onClick={this.toggleNew} waves='light'>New Contact</Button>
                 { this.state.showNew
                 ? <NewContact handleChange={this.handleChange}
