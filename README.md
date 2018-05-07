@@ -1,24 +1,55 @@
-# README
+# dialr
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Your Personal Contact Management App
 
-Things you may want to cover:
 
-* Ruby version
+## What is dialr?
 
-* System dependencies
+Welcome to **dialr**, the world's best contact management app.  Simply log in or sign up to begin adding your contacts.  Contacts can be created, edited, and if they never got you back for that Uber that one time, deleted forever at the press of a button!  
 
-* Configuration
+**dialr** utitlizes the power of React to adhere to the principle of a single page application, for ease of use and convenience.  
 
-* Database creation
+## Some technical details:
 
-* Database initialization
+* Ruby version 2.4.2
 
-* How to run the test suite
+* Deployment will be on heroku
 
-* Services (job queues, cache servers, search engines, etc.)
+* Uses PostgreSQL for database 
 
-* Deployment instructions
+## Features 
 
-* ...
+* User authentication with devise, omiauth 
+
+* ~~Clickable phone numbers for integrated skype calls~~
+
+* Search bar to find a contact by name
+
+
+
+## Known bugs and issues
+
+Markup : * Loss of user session in devise after contact creation, update, delete.
+            * I sped taught myself devise, so I'm sure this would be fixable to somebody with more experience, or could be further pursued if I had more time for submission.  The issue seems to stem from a loss of the user session after a single post, patch, or delete is made on contact info.  
+            * This issue can be avoided if a user signs out and back in after each post, patch, or delete.  This leads me to believe that the issue lies with the needed headers for a user session, perhaps the header tokens are not being updated with the post, patch, or delete being made on contact info.
+            * I have troubleshooted this by experimenting with when and how tokens are saved in the browser's local storage, but to no avail.  
+            * **If you experience this issue, clear the local storage in you browser.  You can do this by entering Dev Tools > Application > Right click Local Storage > Clear.  This will simply clear your tokens so you can begin a new user session.**
+
+
+
+## Models/ERD
+
+![ERD Models for dialr](/client/src/img/dialrERD.png)
+
+
+
+## My Wireframes
+![My WireFrame](/client/src/img/dialr_wireframe.jpg)
+
+
+
+## Links
+* [Heroku Deployment](https://dialrapp.herokuapp.com/)
+
+
+* [My Trello Board](https://trello.com/b/NbCZj0As/newgrinds)
