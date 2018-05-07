@@ -13,10 +13,54 @@ class App extends Component {
 
   state = {
     signedIn: false,
-    contacts: []
+    contacts: [],
+    first_name: '',
+    last_name: '',
+    email: '',
+    phone: '',
+    address: '',
+    contactType: '',
   }
 
+  handleSubmit = async(event) => {
+    event.preventDefault()
+
+    const first_name = this.state.first_name
+    const last_name = this.state.last_name
+    const email = this.state.email
+    const phone = this.state.phone
+    const address = this.state.address
+
+    const payload = {
+        first_name,
+        last_name,
+        email,
+        phone,
+        address
+    }
+    
+    const signedIn = userIsLoggedIn()
+
+    if (signedIn) {
+      setAxiosDefaults()
+      
+    }
+    const response = await axios.post('/api/contacts', payload)
+
+
+    // await this.getContacts()
+    await this.tokens()
+
+
+}
+handleChange = (event) => {
+  const newState = { ...this.state }
+  newState[event.target.name] = event.target.value
+  this.setState(newState)
+}
+
   signOut = async (event) => {
+    await this.tokens()
     try {
       event.preventDefault()
 
@@ -33,7 +77,9 @@ class App extends Component {
   getContacts = async () => {
     try {
         const response = await axios.get('/api/contacts')
+
         this.setState({contacts: response.data})
+
         return response.data
     } catch (error) {
         console.log(error)
@@ -42,6 +88,14 @@ class App extends Component {
 }
 
   async componentWillMount() {
+    await this.tokens()
+  }
+
+  async componentDidMount(){
+    await this.tokens()
+  }
+
+  tokens = async() => {
     try {
       const signedIn = userIsLoggedIn()
 
@@ -105,14 +159,22 @@ class App extends Component {
         signUp={this.signUp}
         signIn={this.signIn} />
     )
-    const ContactsComponent = (props) => {
-      return <ContactsList {...props}/>
-    }
+    // const ContactsComponent = (props) => {
+    //   return <ContactsList {...props}/>
+    // }
 
     const HomeComponent = (props) => {
       return <Home {...props} signOut={this.signOut} 
       contacts={this.state.contacts}
       getContacts={this.getContacts}
+      tokens={this.tokens}
+      handleSubmit={this.handleSubmit}
+      handleChange={this.handleChange}
+      first_name={this.state.first_name}
+      last_name={this.state.last_name}
+      phone={this.state.phone}
+      email={this.state.email}
+      address={this.state.address}
       />
     }
 
@@ -123,7 +185,7 @@ class App extends Component {
         <div className='App'>
           <Switch>
             <Route exact path="/signUp" render={SignUpLogInComponent} />
-            <Route exact path="/contacts" render={ContactsComponent} />
+            {/* <Route exact path="/contacts" render={ContactsComponent} /> */}
             <Route exact path='/' render={HomeComponent}/>
             <Route exact path='/contacts/:id' component={ShowContact} />
           </Switch>

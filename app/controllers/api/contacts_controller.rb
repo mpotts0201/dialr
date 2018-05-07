@@ -1,9 +1,11 @@
 class Api::ContactsController < ApplicationController
 
-    before_action :authenticate_user!
+    # before_action :authenticate_user!
+    # before_action :authenticate_user!, except: [:new, :create]
 
   def index
     @contacts = current_user.contacts
+    puts current_user
 
     render json: @contacts
   end
@@ -16,6 +18,7 @@ class Api::ContactsController < ApplicationController
 
   def create
     @user = current_user
+    puts current_user
     @contact = @user.contacts.build(contact_params)
 
     if @user.save

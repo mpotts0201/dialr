@@ -15,6 +15,13 @@ class EditContact extends Component {
         
     }
 
+    getContact = async(event) => {
+        event.preventDefault()
+
+        const response = await axios.get(`/api/contacts/${this.props.contact.id}`)
+        console.log(response)
+    }
+
     componentDidMount(){
         this.setState({
             first_name: this.props.contact.first_name,

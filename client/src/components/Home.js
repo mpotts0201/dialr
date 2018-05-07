@@ -4,6 +4,8 @@ import NavBar from './NavBar'
 import {Button, Icon} from 'react-materialize'
 import NewContact from './NewContact'
 import axios from 'axios'
+import {userIsLoggedIn, setAxiosDefaults} from '../util/SessionHeaderUtil'
+
 
 class Home extends Component {
 
@@ -19,37 +21,72 @@ class Home extends Component {
 
     }
 
+    // async componentWillMount(){
+    //     await this.tokens()
+    // }
+
+    // tokens = () => {
+    //     this.props.tokens()
+    // }
+
+    // async componentWillMount() {
+    //     try {
+    //       const signedIn = userIsLoggedIn()
+    
+    //       let contacts = []
+    //       if (signedIn) {
+    //         setAxiosDefaults()
+    //         contacts = await this.getContacts()
+    //       }
+    
+    //       this.setState({
+    //         contacts,
+    //         signedIn,
+    //       })
+    //     } catch (error) {
+    //       console.log(error)
+    //     }
+    //   }
+
     toggleNew = () => {
         this.setState({ showNew: !this.state.showNew })
     }
 
-    handleChange = (event) => {
-        const newState = { ...this.state }
-        newState[event.target.name] = event.target.value
-        this.setState(newState)
-    }
+    // handleChange = (event) => {
+    //     const newState = { ...this.state }
+    //     newState[event.target.name] = event.target.value
+    //     this.setState(newState)
+    // }
 
-    handleSubmit = async(event) => {
-        event.preventDefault()
+    // handleSubmit = async(event) => {
+    //     event.preventDefault()
 
-        const first_name = this.state.first_name
-        const last_name = this.state.last_name
-        const email = this.state.email
-        const phone = this.state.phone
-        const address = this.state.address
+    //     const first_name = this.state.first_name
+    //     const last_name = this.state.last_name
+    //     const email = this.state.email
+    //     const phone = this.state.phone
+    //     const address = this.state.address
 
-        const payload = {
-            first_name,
-            last_name,
-            email,
-            phone,
-            address
-        }
+    //     const payload = {
+    //         first_name,
+    //         last_name,
+    //         email,
+    //         phone,
+    //         address
+    //     }
+        
+    //     // const signedIn = userIsLoggedIn()
 
-        const response = await axios.post('/api/contacts', payload)
-        const contacts = await this.getContacts()
+    //     // if (signedIn) {
+    //     //   setAxiosDefaults()
+          
+    //     // }
+    //     const response = await axios.post('/api/contacts', payload)
 
-    }
+    //     // const contacts = await this.getContacts()
+
+
+    // }
 
     getContacts = () => {
         this.props.getContacts()
@@ -60,7 +97,7 @@ class Home extends Component {
             <div>
                 <NavBar/>
                 <ContactsList contacts={this.props.contacts}
-                handleChange={this.handleChange}
+                handleChange={this.props.handleChange}
                 first_name={this.state.first_name}
                 last_name={this.state.last_name}
                 phone={this.state.phone}
@@ -70,13 +107,13 @@ class Home extends Component {
                 />
                 <Button onClick={this.toggleNew} waves='light'>New Contact</Button>
                 { this.state.showNew
-                ? <NewContact handleChange={this.handleChange}
-                first_name={this.state.first_name}
-                last_name={this.state.last_name}
-                phone={this.state.phone}
-                email={this.state.email}
-                address={this.state.address}
-                handleSubmit={this.handleSubmit}
+                ? <NewContact handleChange={this.props.handleChange}
+                first_name={this.props.first_name}
+                last_name={this.props.last_name}
+                phone={this.props.phone}
+                email={this.props.email}
+                address={this.props.address}
+                handleSubmit={this.props.handleSubmit}
                 />
                 :null}
                 <Button onClick={this.props.signOut} waves='light'>Sign Out<Icon left>exit_to_app</Icon></Button>
