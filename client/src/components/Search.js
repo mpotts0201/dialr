@@ -5,7 +5,7 @@ import {Input, Button} from 'react-materialize'
 class Search extends Component {
 
     state = {
-        search: null
+        search: null,
     }
 
     search = () => {
@@ -22,10 +22,11 @@ class Search extends Component {
 
     render() {
         return (
-            <form onSubmit={this.search}>
+            <div>
                 <Input value={this.state.search} label='Search for a contact by name' onChange={this.props.handleChange} name='search'/>
-                <Button type='submit'>Search</Button>
-            </form>
+                <Button type='submit' onClick={this.search}>Search</Button>
+    
+            </div>
         );
     }
 }

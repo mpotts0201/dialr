@@ -17,8 +17,7 @@ class NavBar extends Component {
         return (
 
             <Navbar className='blue' brand='dialr' right>
-                <NavItem onClick={() => console.log('test click')}>Getting started</NavItem>
-                <NavItem href='components.html'>Components</NavItem>
+                <NavItem onClick={this.props.signOut}>Sign Out</NavItem>
             </Navbar>
         );
     }
