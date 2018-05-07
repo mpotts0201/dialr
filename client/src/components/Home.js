@@ -5,7 +5,7 @@ import {Button, Icon} from 'react-materialize'
 import NewContact from './NewContact'
 import axios from 'axios'
 import {userIsLoggedIn, setAxiosDefaults} from '../util/SessionHeaderUtil'
-
+import Search from './Search'
 
 class Home extends Component {
 
@@ -96,6 +96,8 @@ class Home extends Component {
         return (
             <div>
                 <NavBar/>
+                <Search search={this.props.search} 
+                handleChange={this.props.handleChange}/>
                 <ContactsList contacts={this.props.contacts}
                 handleChange={this.props.handleChange}
                 first_name={this.state.first_name}

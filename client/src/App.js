@@ -9,6 +9,8 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import ShowContact from './components/ShowContact'
 
+
+
 class App extends Component {
 
   state = {
@@ -20,6 +22,25 @@ class App extends Component {
     phone: '',
     address: '',
     contactType: '',
+    contact: {},
+    search: null,
+  }
+
+
+  search = (event) => {
+    event.preventDefault()
+    const searchName = this.state.search.toLowerCase()
+
+    this.state.contacts.map((contact, i) => {
+
+      if(contact.first_name.toLowerCase() === searchName){
+        console.log(contact)
+        this.setState({contact: contact})
+      }
+      else{
+        return "Bad search"
+      }
+    })
   }
 
   handleSubmit = async(event) => {
@@ -175,6 +196,7 @@ handleChange = (event) => {
       phone={this.state.phone}
       email={this.state.email}
       address={this.state.address}
+      search={this.search}
       />
     }
 
