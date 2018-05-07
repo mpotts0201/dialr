@@ -1,7 +1,6 @@
 class Api::ContactsController < ApplicationController
 
-    # before_action :authenticate_user!
-    # before_action :authenticate_user!, except: [:new, :create]
+    before_action :authenticate_user!
 
   def index
     @contacts = current_user.contacts

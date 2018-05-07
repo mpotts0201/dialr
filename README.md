@@ -29,11 +29,11 @@ Welcome to **dialr**, the world's best contact management app.  Simply log in or
 
 ## Known bugs and issues
 
-* Loss of user session in devise after contact creation, update, delete.
+* ~~Loss of user session in devise after contact creation, update, delete.
     * I sped taught myself devise, so I'm sure this would be fixable to somebody with more experience, or could be further pursued if I had more time for submission.  The issue seems to stem from a loss of the user session after a single post, patch, or delete is made on contact info.  
     * This issue can be avoided if a user signs out and back in after each post, patch, or delete.  This leads me to believe that the issue lies with the needed headers for a user session, perhaps the header tokens are not being updated with the post, patch, or delete being made on contact info.
     * I have troubleshooted this by experimenting with when and how tokens are saved in the browser's local storage, but to no avail.  
-    * **If you experience this issue, clear the local storage in you browser.  You can do this by entering Dev Tools > Application > Right click Local Storage > Clear.  This will simply clear your tokens so you can begin a new user session.**
+    * **If you experience this issue, clear the local storage in you browser.  You can do this by entering Dev Tools > Application > Right click Local Storage > Clear.  This will simply clear your tokens so you can begin a new user session.~~**
 
 
 
@@ -52,4 +52,4 @@ Welcome to **dialr**, the world's best contact management app.  Simply log in or
 * [Heroku Deployment](https://dialrapp.herokuapp.com/)
 
 
-* [My Trello Board](https://trello.com/b/NbCZj0As/newgrinds)
+* [My Trello Board](https://trello.com/b/XLUCrRLf/dialr)
