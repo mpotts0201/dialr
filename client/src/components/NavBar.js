@@ -18,6 +18,7 @@ class NavBar extends Component {
 
             <Navbar className='blue' brand='dialr' right>
                 <NavItem onClick={this.props.signOut}>Sign Out</NavItem>
+
             </Navbar>
         );
     }

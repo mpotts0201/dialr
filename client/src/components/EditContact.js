@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Row, Input, Button} from 'react-materialize'
+import {Row, Input, Button, Icon} from 'react-materialize'
 import axios from 'axios'
 
 class EditContact extends Component {
@@ -101,7 +101,7 @@ class EditContact extends Component {
                     value={this.state.address} name='address'
                     placeholder={this.props.contact.address}
                 />
-                <Button type='submit'>Submit Edit</Button>
+                <Button type='submit'><Icon left>cached</Icon>Update</Button>
             </Row>
             
             </form>

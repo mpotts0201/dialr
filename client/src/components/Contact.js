@@ -1,8 +1,19 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, CardTitle, Button, Input, Modal } from 'react-materialize'
+import { Card, CardTitle, Button, Input, Modal, Icon } from 'react-materialize'
 import image from '../img/default_img.jpg'
 import EditContact from './EditContact'
+import styled from 'styled-components'
+
+
+const Menu = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+bottom: 0;
+`
+
+
 
 
 class Contact extends Component {
@@ -54,13 +65,15 @@ class Contact extends Component {
                                     <p>{this.props.contact.email}</p>
                                     <p>{this.props.contact.address}</p>
                                 </div>}
-                            <Button onClick={this.toggleEdit}>Edit</Button>
-                            <Modal 
-                                    header='Are you sure?'
+                            <Menu>
+                                <Button onClick={this.toggleEdit}>Edit</Button>
+                                <Modal
+                                    header={`Are you sure you want to delete ${this.props.contact.first_name}?`}
                                     bottomSheet
-                                    trigger={<Button>Delete</Button>}>
-                                    <Button onClick={() => this.props.deleteContact(this.props.contact.id)}>Delete</Button>
-                              </Modal>
+                                    trigger={<Button><Icon>delete_forever</Icon>Delete</Button>}>
+                                    <Button onClick={() => this.props.deleteContact(this.props.contact.id)}><Icon>delete_forever</Icon>Delete</Button>
+                                </Modal>
+                            </Menu>
 
                         </div>
                     }>

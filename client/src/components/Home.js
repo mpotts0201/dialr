@@ -98,10 +98,11 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <NavBar signOut={this.props.signOut} />
+                <NavBar signOut={this.props.signOut} 
+                />
                 <Search search={this.props.search}
                     handleChange={this.props.handleChange} />
-                    {this.props.showBad === true
+                {this.props.showBad === true
                     ? <h3>Bad search, please try again</h3>
                     : null}
 
@@ -116,18 +117,15 @@ class Home extends Component {
                     getContacts={this.props.getContacts}
                     deleteContact={this.props.deleteContact}
                 />
-                <Button onClick={this.toggleNew} waves='light'>New Contact</Button>
-                {this.state.showNew
-                    ? <NewContact handleChange={this.props.handleChange}
-                        first_name={this.props.first_name}
-                        last_name={this.props.last_name}
-                        phone={this.props.phone}
-                        email={this.props.email}
-                        address={this.props.address}
-                        handleSubmit={this.props.handleSubmit}
-                    />
-                    : null}
-                <Button onClick={this.props.signOut} waves='light'>Sign Out<Icon left>exit_to_app</Icon></Button>
+                <NewContact handleChange={this.props.handleChange}
+                    first_name={this.props.first_name}
+                    last_name={this.props.last_name}
+                    phone={this.props.phone}
+                    email={this.props.email}
+                    address={this.props.address}
+                    handleSubmit={this.props.handleSubmit}
+                />
+
 
 
             </div>
