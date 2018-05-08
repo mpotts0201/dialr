@@ -28,6 +28,9 @@ class NewContact extends Component {
                             value={this.props.email} name='email'
                         />
 
+                        <Input s={3} label='contact type' onChange={this.props.handleChange}
+                        value={this.props.contactType} name='contactType' />
+
                         <Input s={12} label="Address" onChange={this.props.handleChange}
                             value={this.props.address} name='address'
                         />

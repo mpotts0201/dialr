@@ -114,6 +114,7 @@ class Home extends Component {
                     phone={this.state.phone}
                     email={this.state.email}
                     address={this.state.address}
+                    contactType={this.state.contactType}
                     getContacts={this.props.getContacts}
                     deleteContact={this.props.deleteContact}
                 />
@@ -124,6 +125,8 @@ class Home extends Component {
                     email={this.props.email}
                     address={this.props.address}
                     handleSubmit={this.props.handleSubmit}
+                    contactType={this.props.contactType}
+
                 />
 
 

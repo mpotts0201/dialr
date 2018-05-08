@@ -76,13 +76,15 @@ class App extends Component {
     const email = this.state.email
     const phone = this.state.phone
     const address = this.state.address
+    const contactType = this.state.contactType
 
     const payload = {
       first_name,
       last_name,
       email,
       phone,
-      address
+      address,
+      contactType,
     }
 
     const signedIn = userIsLoggedIn()
@@ -219,6 +221,7 @@ class App extends Component {
         phone={this.state.phone}
         email={this.state.email}
         address={this.state.address}
+        contactType={this.state.contactType}
         search={this.search}
         contact={this.state.contact}
         deleteContact={this.deleteContact}

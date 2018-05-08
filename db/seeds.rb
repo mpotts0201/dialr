@@ -46,7 +46,7 @@ Contact.create!(
     last_name: FFaker::Name.last_name,
     phone: '(123) 920-1095',
     email: 'boldnest@att.com',
-    contactType: 'Personal',
+    contactType: 'Event',
     address: '857 William Lane Plainview, TX 79072',
     user_id: murphy_potts.id,
 )
