@@ -1,17 +1,31 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Card, CardTitle, Button, Input } from 'react-materialize'
+import { Card, CardTitle, Button, Input, Modal } from 'react-materialize'
 import image from '../img/default_img.jpg'
 import EditContact from './EditContact'
+
 
 class Contact extends Component {
 
     state = {
-        showEdit: false
+        showEdit: false,
+        showDelete: false,
     }
 
     toggleEdit = () => {
         this.setState({ showEdit: !this.state.showEdit })
+        if (this.state.showDelete) {
+            this.toggleDelete()
+        }
+    }
+
+    toggleDelete = () => {
+        this.setState({ showDelete: !this.state.showDelete })
+        {
+            this.state.showEdit
+                ? this.toggleEdit
+                : null
+        }
     }
 
     render() {
@@ -40,7 +54,13 @@ class Contact extends Component {
                                     <p>{this.props.contact.email}</p>
                                     <p>{this.props.contact.address}</p>
                                 </div>}
-                            <Button onClick={this.toggleEdit}>Edit Contact</Button>
+                            <Button onClick={this.toggleEdit}>Edit</Button>
+                            <Modal
+                                    header='Are you sure?'
+                                    bottomSheet
+                                    trigger={<Button>Delete</Button>}>
+                                    <Button onClick={() => this.props.deleteContact(this.props.contact.id)}>Delete</Button>
+                              </Modal>
 
                         </div>
                     }>

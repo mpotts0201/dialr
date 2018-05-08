@@ -144,6 +144,7 @@ class Home extends Component {
                     email={this.state.email}
                     address={this.state.address}
                     getContacts={this.props.getContacts}
+                    deleteContact={this.props.deleteContact}
                 />
                 <Button onClick={this.toggleNew} waves='light'>New Contact</Button>
                 {this.state.showNew

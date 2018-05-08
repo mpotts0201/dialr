@@ -35,17 +35,15 @@ class App extends Component {
       if (contact.first_name.toLowerCase() === searchName) {
         console.log(contact)
         const contacts = { ...this.state.contacts }
-        console.log(contacts)
+        
+        contacts.push(contact)
+
+        
 
 
 
-        // const index = contacts.findIndex(contact)
-        // function moveToFirst(contacts, index) {
-        //   contacts.push(contacts.splice(index, 1)[0])
-        //   this.setState({ contacts: contacts })
-        // }
-
-
+        this.setState(contacts)
+        console.log(this.state.contacts)
         // this.setState({contact: contact})
       }
       else {
@@ -53,6 +51,17 @@ class App extends Component {
       }
     })
   }
+
+
+
+  deleteContact = async(id) => {
+    const response = await axios.delete(`/api/contacts/${id}`)
+    await this.getContacts()
+  }
+
+
+
+
 
   handleSubmit = async (event) => {
     event.preventDefault()
@@ -191,9 +200,7 @@ class App extends Component {
         signUp={this.signUp}
         signIn={this.signIn} />
     )
-    // const ContactsComponent = (props) => {
-    //   return <ContactsList {...props}/>
-    // }
+
 
     const HomeComponent = (props) => {
       return <Home {...props} signOut={this.signOut}
@@ -209,6 +216,7 @@ class App extends Component {
         address={this.state.address}
         search={this.search}
         contact={this.state.contact}
+        deleteContact={this.deleteContact}
       />
     }
 
@@ -219,9 +227,7 @@ class App extends Component {
         <div className='App'>
           <Switch>
             <Route exact path="/signUp" render={SignUpLogInComponent} />
-            {/* <Route exact path="/contacts" render={ContactsComponent} /> */}
             <Route exact path='/' render={HomeComponent} />
-            <Route exact path='/contacts/:id' component={ShowContact} />
           </Switch>
 
           {this.state.signedIn ? <Redirect to='/' /> : <Redirect to="/signUp" />}
