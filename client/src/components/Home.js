@@ -101,40 +101,10 @@ class Home extends Component {
                 <NavBar signOut={this.props.signOut} />
                 <Search search={this.props.search}
                     handleChange={this.props.handleChange} />
+                    {this.props.showBad
+                    ? <h3>Bad search, please try again</h3>
+                    :null}
 
-                {this.props.contact
-                    ? <div>
-
-                        <Card className='card' header={<CardTitle reveal image={image} waves='light' />}
-                            title={this.props.contact.first_name + ' ' + this.props.contact.last_name}
-                            reveal={
-                                <div>
-
-                                    {this.state.showEdit
-                                        ? <EditContact contact={this.props.contact}
-                                            contacts={this.props.contacts}
-                                            handleChange={this.handleChange}
-                                            first_name={this.props.first_name}
-                                            last_name={this.props.last_name}
-                                            phone={this.props.phone}
-                                            email={this.props.email}
-                                            address={this.props.address}
-                                            getContacts={this.props.getContacts}
-                                            toggleEdit={this.toggleEdit}
-                                        />
-                                        : <div>
-                                            <p>{this.props.contact.phone}</p>
-                                            <p>{this.props.contact.email}</p>
-                                            <p>{this.props.contact.address}</p>
-                                        </div>}
-                                    <Button onClick={this.toggleEdit}>Edit Contact</Button>
-
-                                </div>
-                            }>
-                            <Link to=''>Edit</Link>
-                        </Card>
-                    </div>
-                    : null}
 
                 <ContactsList contacts={this.props.contacts}
                     handleChange={this.props.handleChange}

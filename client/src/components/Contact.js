@@ -55,7 +55,7 @@ class Contact extends Component {
                                     <p>{this.props.contact.address}</p>
                                 </div>}
                             <Button onClick={this.toggleEdit}>Edit</Button>
-                            <Modal
+                            <Modal 
                                     header='Are you sure?'
                                     bottomSheet
                                     trigger={<Button>Delete</Button>}>

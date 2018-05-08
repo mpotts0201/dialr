@@ -24,37 +24,42 @@ class App extends Component {
     contactType: '',
     contact: {},
     search: null,
+    showBad: false,
   }
 
 
-  search = () => {
+  search = async () => {
     const searchName = this.state.search.toLowerCase()
 
+    const contacts = [...this.state.contacts]
+
     this.state.contacts.map((contact, i) => {
+      const firstName = contact.first_name.toLowerCase()
+      const lastName = contact.last_name.toLowerCase()
 
-      if (contact.first_name.toLowerCase() === searchName) {
+      if (firstName === searchName || lastName === searchName
+        || searchName === firstName + ' ' + lastName
+        || searchName === firstName + lastName) {
         console.log(contact)
-        const contacts = { ...this.state.contacts }
-        
-        contacts.push(contact)
+        contacts.splice(i, 1)
+        contacts.unshift(contact)
 
-        
-
-
-
-        this.setState(contacts)
+        this.setState({ contacts: contacts })
+        console.log(contacts)
         console.log(this.state.contacts)
-        // this.setState({contact: contact})
+
       }
       else {
-        return "Bad search"
+        // this.toggleBadsearch()
       }
     })
   }
 
+  toggleBadsearch = () => {
+    this.setState({showBad: !this.state.showBad})
+  }
 
-
-  deleteContact = async(id) => {
+  deleteContact = async (id) => {
     const response = await axios.delete(`/api/contacts/${id}`)
     await this.getContacts()
   }
@@ -217,6 +222,8 @@ class App extends Component {
         search={this.search}
         contact={this.state.contact}
         deleteContact={this.deleteContact}
+        toggleBadsearch={this.toggleBadsearch}
+        showBad={this.state.showBad}
       />
     }
 
