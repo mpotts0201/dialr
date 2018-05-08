@@ -38,3 +38,18 @@
   flex-direction: row;
   flex-wrap: wrap;
 } */
+
+@keyframes slide-in {
+  from {
+        transform: translateX(-15%);
+        opacity: 0;
+      }
+  to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+}
+
+.contact {
+  animation: slide-in 0.25s ease-in;
+}

@@ -30,7 +30,7 @@ class Contact extends Component {
 
     render() {
         return (
-            <div>
+            <div className='contact'>
 
                 <Card className='card' header={<CardTitle reveal image={image} waves='light' />}
                     title={this.props.contact.first_name + ' ' + this.props.contact.last_name}

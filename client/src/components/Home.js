@@ -101,9 +101,9 @@ class Home extends Component {
                 <NavBar signOut={this.props.signOut} />
                 <Search search={this.props.search}
                     handleChange={this.props.handleChange} />
-                    {this.props.showBad
+                    {this.props.showBad === true
                     ? <h3>Bad search, please try again</h3>
-                    :null}
+                    : null}
 
 
                 <ContactsList contacts={this.props.contacts}

@@ -37,27 +37,27 @@ class App extends Component {
       const firstName = contact.first_name.toLowerCase()
       const lastName = contact.last_name.toLowerCase()
 
-      if (firstName === searchName || lastName === searchName
-        || searchName === firstName + ' ' + lastName
-        || searchName === firstName + lastName) {
+      if (firstName == searchName || lastName == searchName
+        || searchName == firstName + ' ' + lastName
+        || searchName == firstName + lastName) {
         console.log(contact)
         contacts.splice(i, 1)
         contacts.unshift(contact)
 
-        this.setState({ contacts: contacts })
-        console.log(contacts)
-        console.log(this.state.contacts)
+        this.setState({
+          contacts: contacts,
+          showBad: false,
+        })
 
+        console.log(this.state.showBad)
       }
       else {
-        // this.toggleBadsearch()
+        this.setState({showBad: true})
       }
     })
   }
 
-  toggleBadsearch = () => {
-    this.setState({showBad: !this.state.showBad})
-  }
+
 
   deleteContact = async (id) => {
     const response = await axios.delete(`/api/contacts/${id}`)

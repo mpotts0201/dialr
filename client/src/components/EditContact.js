@@ -74,7 +74,7 @@ class EditContact extends Component {
 
     render() {
         return (
-            <form onSubmit={this.editSubmit}>
+            <form onSubmit={this.editSubmit} className='contact'>
             <Row>
 
                 <Input s={6} label="First Name" onChange={this.handleEdit}
