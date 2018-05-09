@@ -14,7 +14,6 @@ class ContactsList extends Component {
 
         return (
             <div>
-                <h1>Contacts</h1>
 
                 {this.props.contacts.length > 0
                     ? this.props.contacts.map((contact) => {

@@ -36,18 +36,16 @@ class SignUpLogIn extends Component {
         return (
             <div>
                 <h1>dialr</h1>
-                <form>
+                <form className='input'>
                     <Input s={6} onChange={this.handleChange} label='Email' name="email" value={this.state.email} />
 
                     <Input s={6} onChange={this.handleChange} label='Password' name="password" value={this.state.password} />
-                    
+
                     <Input s={6} onChange={this.handleChange} label='Confirm Password' name="password_confirmation"
                         value={this.state.password_confirmation} />
+                        <Button className='buttons' onClick={this.signUp} waves='light'>Sign Up<Icon left>person_add</Icon></Button>
 
-                    <Button onClick={this.signUp} waves='light'>Sign Up<Icon left>person_add</Icon></Button>
-
-                    <Button onClick={this.signIn} waves='light'>Log In<Icon left>person</Icon></Button>
-
+                        <Button className='buttons' onClick={this.signIn} waves='light'>Log In<Icon left>person</Icon></Button>
                 </form>
             </div>
         )
