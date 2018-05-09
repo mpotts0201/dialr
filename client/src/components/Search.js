@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import {Input, Button} from 'react-materialize'
+import {Input, Button, Icon} from 'react-materialize'
+
+
 
 
 class Search extends Component {
@@ -22,9 +24,9 @@ class Search extends Component {
 
     render() {
         return (
-            <div>
+            <div className='input'>
                 <Input value={this.state.search} label='Search for a contact by name' onChange={this.props.handleChange} name='search'/>
-                <Button type='submit' onClick={this.search}>Search</Button>
+                <Button type='submit'  onClick={this.search}><Icon left>search</Icon>Search</Button>
     
             </div>
         );

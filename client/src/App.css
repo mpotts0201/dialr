@@ -52,4 +52,10 @@
 
 .contact {
   animation: slide-in 0.25s ease-in;
+
+}
+
+.input{
+  width: 30vw;
+  margin: 0 auto;
 }

@@ -8,7 +8,7 @@ class NewContact extends Component {
             <Modal
             header='New Contact'
             
-            trigger={<Button><Icon>new</Icon>New Contact</Button>}>
+            trigger={<Button><Icon left>add_circle</Icon>New Contact</Button>}>
                 <form onSubmit={this.props.handleSubmit} className='contact'>
                     <Row>
 

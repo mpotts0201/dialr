@@ -66,12 +66,12 @@ class Contact extends Component {
                                     <p>{this.props.contact.address}</p>
                                 </div>}
                             <Menu>
-                                <Button onClick={this.toggleEdit}>Edit</Button>
+                                <Button onClick={this.toggleEdit}><Icon left>edit</Icon>Edit</Button>
                                 <Modal
                                     header={`Are you sure you want to delete ${this.props.contact.first_name}?`}
                                     bottomSheet
-                                    trigger={<Button><Icon>delete_forever</Icon>Delete</Button>}>
-                                    <Button onClick={() => this.props.deleteContact(this.props.contact.id)}><Icon>delete_forever</Icon>Delete</Button>
+                                    trigger={<Button><Icon left>delete_forever</Icon>Delete</Button>}>
+                                    <Button onClick={() => this.props.deleteContact(this.props.contact.id)}><Icon left>delete_forever</Icon>Delete</Button>
                                 </Modal>
                             </Menu>
 

@@ -23,12 +23,13 @@ class App extends Component {
     address: '',
     contactType: '',
     contact: {},
-    search: null,
+    search: '',
     showBad: false,
   }
 
 
   search = async () => {
+    
     const searchName = this.state.search.toLowerCase()
 
     const contacts = [...this.state.contacts]

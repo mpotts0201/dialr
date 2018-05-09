@@ -10,6 +10,9 @@ import EditContact from './EditContact'
 import image from '../img/default_img.jpg'
 import { Link } from 'react-router-dom'
 
+
+
+
 class Home extends Component {
 
 
@@ -106,6 +109,20 @@ class Home extends Component {
                     ? <h3>Bad search, please try again</h3>
                     : null}
 
+                    <br/>
+                    <br/>
+
+                <NewContact handleChange={this.props.handleChange}
+                    first_name={this.props.first_name}
+                    last_name={this.props.last_name}
+                    phone={this.props.phone}
+                    email={this.props.email}
+                    address={this.props.address}
+                    handleSubmit={this.props.handleSubmit}
+                    contactType={this.props.contactType}
+
+                />
+
 
                 <ContactsList contacts={this.props.contacts}
                     handleChange={this.props.handleChange}
@@ -118,16 +135,7 @@ class Home extends Component {
                     getContacts={this.props.getContacts}
                     deleteContact={this.props.deleteContact}
                 />
-                <NewContact handleChange={this.props.handleChange}
-                    first_name={this.props.first_name}
-                    last_name={this.props.last_name}
-                    phone={this.props.phone}
-                    email={this.props.email}
-                    address={this.props.address}
-                    handleSubmit={this.props.handleSubmit}
-                    contactType={this.props.contactType}
 
-                />
 
 
 
