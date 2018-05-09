@@ -77,7 +77,6 @@ class Contact extends Component {
 
                         </div>
                     }>
-                    <Link to=''>Edit</Link>
                 </Card>
             </div>
         )
