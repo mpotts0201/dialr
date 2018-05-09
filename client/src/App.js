@@ -97,7 +97,6 @@ class App extends Component {
     const response = await axios.post('/api/contacts', payload)
 
 
-    // await this.getContacts()
     await this.tokens()
 
 

@@ -27,72 +27,14 @@ class Home extends Component {
 
     }
 
-    // async componentWillMount(){
-    //     await this.tokens()
-    // }
 
-    // tokens = () => {
-    //     this.props.tokens()
-    // }
-
-    // async componentWillMount() {
-    //     try {
-    //       const signedIn = userIsLoggedIn()
-
-    //       let contacts = []
-    //       if (signedIn) {
-    //         setAxiosDefaults()
-    //         contacts = await this.getContacts()
-    //       }
-
-    //       this.setState({
-    //         contacts,
-    //         signedIn,
-    //       })
-    //     } catch (error) {
-    //       console.log(error)
-    //     }
-    //   }
 
     toggleNew = () => {
         this.setState({ showNew: !this.state.showNew })
     }
 
-    // handleChange = (event) => {
-    //     const newState = { ...this.state }
-    //     newState[event.target.name] = event.target.value
-    //     this.setState(newState)
-    // }
-
-    // handleSubmit = async(event) => {
-    //     event.preventDefault()
-
-    //     const first_name = this.state.first_name
-    //     const last_name = this.state.last_name
-    //     const email = this.state.email
-    //     const phone = this.state.phone
-    //     const address = this.state.address
-
-    //     const payload = {
-    //         first_name,
-    //         last_name,
-    //         email,
-    //         phone,
-    //         address
-    //     }
-
-    //     // const signedIn = userIsLoggedIn()
-
-    //     // if (signedIn) {
-    //     //   setAxiosDefaults()
-
-    //     // }
-    //     const response = await axios.post('/api/contacts', payload)
-
-    //     // const contacts = await this.getContacts()
 
 
-    // }
 
     getContacts = () => {
         this.props.getContacts()
