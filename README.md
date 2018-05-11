@@ -38,7 +38,9 @@ Welcome to **dialr**, the world's best contact management app.  Simply log in or
 
 * "Bad Search" message comes up regardless of bad or good search
 
-* When making a request, post, patch, or delete, sometimes the list of contacts reorders itself, making it confusing for the user 
+* When making a request, post, patch, or delete, sometimes the list of contacts reorders itself, making it confusing for the user .
+
+* Submit button on new contact modal loses correct positioning at certain view widths. OK on mobile and OK at large widths.  
 
 
 ## Models/ERD

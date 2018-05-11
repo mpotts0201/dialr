@@ -52,10 +52,32 @@
 }
 
 .input{
-  width: 30vw;
+  width: 40vw;
   margin: 0 auto;
 }
 
 .buttons{
   margin: 10px;
 }
+
+.button{
+  display: flex;
+  width: 145px;
+  margin: 0 auto;
+
+}
+
+@media(max-width: 900px){
+  .card{
+    width: 90vw;
+  }
+  .input{
+    width: 90vw;
+  }
+  .newInputs{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+  }
+}
+

@@ -11,6 +11,11 @@ display: flex;
 flex-direction: row;
 justify-content: space-around;
 bottom: 0;
+
+@media(max-width: 800px){
+    flex-direction: column;
+    margin: 10px;
+}
 `
 
 
@@ -66,7 +71,7 @@ class Contact extends Component {
                                     <p>{this.props.contact.address}</p>
                                 </div>}
                             <Menu>
-                                <Button onClick={this.toggleEdit}><Icon left>edit</Icon>Edit</Button>
+                                <Button  onClick={this.toggleEdit}><Icon left>edit</Icon>Edit</Button>
                                 <Modal
                                     header={`Are you sure you want to delete ${this.props.contact.first_name}?`}
                                     bottomSheet
