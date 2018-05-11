@@ -8,14 +8,8 @@ import styled from 'styled-components'
 
 const Menu = styled.div`
 display: flex;
-flex-direction: row;
-justify-content: space-around;
-bottom: 0;
+flex-direction: column;
 
-@media(max-width: 800px){
-    flex-direction: column;
-    margin: 10px;
-}
 `
 
 
@@ -69,6 +63,7 @@ class Contact extends Component {
                                     <p>{this.props.contact.phone}</p>
                                     <p>{this.props.contact.email}</p>
                                     <p>{this.props.contact.address}</p>
+                                    <p>Contact Type: {this.props.contact.contactType}</p>
                                 </div>}
                             <Menu>
                                 <Button className='button' onClick={this.toggleEdit}><Icon left>edit</Icon>Edit</Button>
