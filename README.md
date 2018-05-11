@@ -44,7 +44,9 @@ Welcome to **dialr**, the world's best contact management app.  Simply log in or
 
 * When making a request, post, patch, or delete, sometimes the list of contacts reorders itself, making it confusing for the user.
 
-* Submit button on new contact modal loses correct positioning at certain view widths. OK on mobile and OK at large widths.  
+* ~~Submit button on new contact modal loses correct positioning at certain view widths. OK on mobile and OK at large widths.~~
+    * **FIXED: Reformatted new contact form**
+
 
 
 ## Models/ERD
