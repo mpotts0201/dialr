@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Row, Input, Button, Modal, Icon } from 'react-materialize'
+import { Row, Input, Button, Modal, Icon, Dropdown, NavItem } from 'react-materialize'
 
 
 class NewContact extends Component {
@@ -11,6 +11,14 @@ class NewContact extends Component {
                 trigger={<Button><Icon left>add_circle</Icon>New Contact</Button>}>
                 <form onSubmit={this.props.handleSubmit} className='contact'>
                     <Row>
+                        <Dropdown trigger={
+                            <Button>Select Contact Type</Button>
+
+                        }>
+                            <NavItem onClick={() => this.props.setType('Work')}>Work</NavItem>
+                            <NavItem onClick={() => this.props.setType('Personal')}>Personal</NavItem>
+                            <NavItem onClick={() => this.props.setType('Event')}>Event</NavItem>
+                        </Dropdown>
                         <div className='newInputs'>
 
                             <Input className='input' label="First Name" onChange={this.props.handleChange}
@@ -28,14 +36,20 @@ class NewContact extends Component {
                             <Input className='input' label="email" onChange={this.props.handleChange}
                                 value={this.props.email} name='email'
                             />
+
+
+
                         </div>
                         <Input s={12} label="Address" onChange={this.props.handleChange}
                             value={this.props.address} name='address'
                         />
 
 
-                        <Button className='button' waves='light' type='submit'>Submit</Button>
+
                     </Row>
+
+                    <Button className='button' waves='light' type='submit'>Submit</Button>
+
 
                 </form>
             </Modal>

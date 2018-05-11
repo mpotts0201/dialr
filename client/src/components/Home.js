@@ -9,7 +9,7 @@ import Search from './Search'
 import EditContact from './EditContact'
 import image from '../img/default_img.jpg'
 import { Link } from 'react-router-dom'
-
+import Type from './Type'
 
 
 
@@ -43,7 +43,7 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <NavBar signOut={this.props.signOut} 
+                <NavBar signOut={this.props.signOut}
                 />
                 <Search search={this.props.search}
                     handleChange={this.props.handleChange} />
@@ -51,8 +51,8 @@ class Home extends Component {
                     ? <h3>Bad search, please try again</h3>
                     : null}
 
-                    <br/>
-                    <br/>
+                <br />
+                <br />
 
                 <NewContact handleChange={this.props.handleChange}
                     first_name={this.props.first_name}
@@ -62,8 +62,13 @@ class Home extends Component {
                     address={this.props.address}
                     handleSubmit={this.props.handleSubmit}
                     contactType={this.props.contactType}
-
+                    setType={this.props.setType}
                 />
+
+                <Type selectType={this.props.selectType}
+                    getContacts={this.props.getContacts}
+                />
+
 
 
                 <ContactsList contacts={this.props.contacts}

@@ -27,6 +27,21 @@ class App extends Component {
     showBad: false,
   }
 
+  setType = (type) => {
+    this.setState({contactType: type})
+  }
+
+  selectType = (type) => {
+    const contacts = []
+    this.state.contacts.map((contact, i) => {
+      contact.contactType == type
+      ? contacts.push(contact)
+      : null
+    })
+    this.setState({contacts: contacts})
+    console.log(contacts)
+  }
+
 
   search = async () => {
     
@@ -227,6 +242,8 @@ class App extends Component {
         deleteContact={this.deleteContact}
         toggleBadsearch={this.toggleBadsearch}
         showBad={this.state.showBad}
+        selectType={this.selectType}
+        setType={this.setType}
       />
     }
 

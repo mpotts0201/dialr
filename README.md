@@ -36,9 +36,9 @@ Welcome to **dialr**, the world's best contact management app.  Simply log in or
     * **~~If you experience this issue, clear the local storage in you browser.  You can do this by entering Dev Tools > Application > Right click Local Storage > Clear.  This will simply clear your tokens so you can begin a new user session.~~**
     * **FIXED:   config.change_headers_on_each_request = false**
 
-* "Bad Search" message comes up regardless of bad or good search
+* "Bad Search" message comes up unreliably sometimes, sometimes on successful searches, sometimes it does not dismiss on a subsequent correct search.  Could have to do with React's life cycle and not updating state as expected.  
 
-* When making a request, post, patch, or delete, sometimes the list of contacts reorders itself, making it confusing for the user .
+* When making a request, post, patch, or delete, sometimes the list of contacts reorders itself, making it confusing for the user.
 
 * Submit button on new contact modal loses correct positioning at certain view widths. OK on mobile and OK at large widths.  
 
