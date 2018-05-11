@@ -39,9 +39,9 @@ class SignUpLogIn extends Component {
                 <form className='input'>
                     <Input s={6} onChange={this.handleChange} label='Email' name="email" value={this.state.email} />
 
-                    <Input s={6} onChange={this.handleChange} label='Password' name="password" value={this.state.password} />
+                    <Input s={6} onChange={this.handleChange} type='password' label='Password' name="password" value={this.state.password} />
 
-                    <Input s={6} onChange={this.handleChange} label='Confirm Password' name="password_confirmation"
+                    <Input s={6} onChange={this.handleChange} type='password' label='Confirm Password' name="password_confirmation"
                         value={this.state.password_confirmation} />
                         <Button className='buttons' onClick={this.signUp} waves='light'>Sign Up<Icon left>person_add</Icon></Button>
 
