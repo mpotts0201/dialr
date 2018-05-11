@@ -71,7 +71,7 @@ class Contact extends Component {
                                     <p>{this.props.contact.address}</p>
                                 </div>}
                             <Menu>
-                                <Button  onClick={this.toggleEdit}><Icon left>edit</Icon>Edit</Button>
+                                <Button className='button' onClick={this.toggleEdit}><Icon left>edit</Icon>Edit</Button>
                                 <Modal
                                     header={`Are you sure you want to delete ${this.props.contact.first_name}?`}
                                     bottomSheet
