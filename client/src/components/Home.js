@@ -65,6 +65,9 @@ class Home extends Component {
                     setType={this.props.setType}
                 />
 
+                <br/>
+                <br/>
+
                 <Type selectType={this.props.selectType}
                     getContacts={this.props.getContacts}
                 />
