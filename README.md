@@ -17,13 +17,17 @@ Welcome to **dialr**, the world's best contact management app.  Simply log in or
 
 * Uses PostgreSQL for database 
 
+* React Materialize for styling
+
 ## Features 
 
 * User authentication with devise, omiauth 
 
-* ~~Clickable phone numbers for integrated skype calls~~
+* ~~Clickable phone numbers for integrated twilio calls~~
 
 * Search bar to find a contact by name
+
+* Sort by contact type
 
 
 
