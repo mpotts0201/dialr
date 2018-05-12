@@ -45,7 +45,7 @@ class App extends Component {
 
 
   search = async () => {
-    
+    await this.getContacts()
     const searchName = this.state.search.toLowerCase()
 
     const contacts = [...this.state.contacts]
