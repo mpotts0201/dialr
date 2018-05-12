@@ -65,27 +65,27 @@ class Home extends Component {
                     setType={this.props.setType}
                 />
 
-                <br/>
-                <br/>
+                <br />
+                <br />
 
                 <Type selectType={this.props.selectType}
                     getContacts={this.props.getContacts}
                 />
 
 
-
-                <ContactsList contacts={this.props.contacts}
-                    handleChange={this.props.handleChange}
-                    first_name={this.state.first_name}
-                    last_name={this.state.last_name}
-                    phone={this.state.phone}
-                    email={this.state.email}
-                    address={this.state.address}
-                    contactType={this.state.contactType}
-                    getContacts={this.props.getContacts}
-                    deleteContact={this.props.deleteContact}
-                />
-
+                <div className='contact-list' >
+                    <ContactsList contacts={this.props.contacts}
+                        handleChange={this.props.handleChange}
+                        first_name={this.state.first_name}
+                        last_name={this.state.last_name}
+                        phone={this.state.phone}
+                        email={this.state.email}
+                        address={this.state.address}
+                        contactType={this.state.contactType}
+                        getContacts={this.props.getContacts}
+                        deleteContact={this.props.deleteContact}
+                    />
+                </div>
 
 
 

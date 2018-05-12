@@ -60,10 +60,10 @@ class Contact extends Component {
                                     toggleEdit={this.toggleEdit}
                                 />
                                 : <div>
+                                    <h5>{this.props.contact.contactType} Contact</h5>
                                     <p>{this.props.contact.phone}</p>
                                     <p>{this.props.contact.email}</p>
                                     <p>{this.props.contact.address}</p>
-                                    <p>Contact Type: {this.props.contact.contactType}</p>
                                 </div>}
                             <Menu>
                                 <Button className='button' onClick={this.toggleEdit}><Icon left>edit</Icon>Edit</Button>
