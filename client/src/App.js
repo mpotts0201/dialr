@@ -31,7 +31,8 @@ class App extends Component {
     this.setState({contactType: type})
   }
 
-  selectType = (type) => {
+  selectType = async(type) => {
+    await this.getContacts()
     const contacts = []
     this.state.contacts.map((contact, i) => {
       contact.contactType == type
@@ -44,7 +45,7 @@ class App extends Component {
 
 
   search = async () => {
-    
+    await this.getContacts()
     const searchName = this.state.search.toLowerCase()
 
     const contacts = [...this.state.contacts]

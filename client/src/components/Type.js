@@ -8,7 +8,7 @@ class Type extends Component {
             <Dropdown trigger={
                 <Button>Sort by Type</Button>
             }>
-                <NavItem onClick={this.props.getContacts}>None</NavItem>
+                <NavItem onClick={this.props.getContacts}>All</NavItem>
                 <NavItem onClick={() => this.props.selectType('Work')}>Work</NavItem>
                 <NavItem onClick={() => this.props.selectType('Personal')} >Personal</NavItem>
                 <NavItem onClick={() => this.props.selectType('Event')} >Event</NavItem>
