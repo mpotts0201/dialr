@@ -45,3 +45,5 @@ gem 'omniauth'
 gem 'devise_token_auth'
 
 gem 'ffaker'
+
+gem 'twilio-ruby'
