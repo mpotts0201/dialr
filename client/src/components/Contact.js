@@ -81,7 +81,9 @@ class Contact extends Component {
                                 />
                                 : <div>
                                     <h5>{this.props.contact.contactType} Contact</h5>
-                                    <p onClick={this.call}>{this.props.contact.phone}</p>
+
+                                    <Button onClick={this.call}><Icon left>phone</Icon>{this.props.contact.phone}</Button>
+
                                     <p>{this.props.contact.email}</p>
                                     <p>{this.props.contact.address}</p>
                                 </div>}

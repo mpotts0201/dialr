@@ -47,3 +47,5 @@ gem 'devise_token_auth'
 gem 'ffaker'
 
 gem 'twilio-ruby'
+
+gem 'dotenv-rails'
