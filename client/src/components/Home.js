@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom'
 import Type from './Type'
 
 
-
 class Home extends Component {
 
 
@@ -71,6 +70,7 @@ class Home extends Component {
                 <Type selectType={this.props.selectType}
                     getContacts={this.props.getContacts}
                 />
+
 
 
                 <div className='contact-list' >
