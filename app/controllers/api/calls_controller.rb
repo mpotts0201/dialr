@@ -1,27 +1,23 @@
+require 'twilio-ruby'
+
 class Api::CallsController < ApplicationController
-    require 'twilio-ruby'
 
 
-    @client = Twilio::REST::Client.new account_sid, auth_token 
-    puts 'Client: '
-    puts @client
 
     def call
-    message = @client.messages.create(
-        body: "Hello from Ruby",
-        to: "+16787046881",    # Replace with your phone number
-        from: "+16784338387")  # Replace with your Twilio number
+        @number = params[:number]
 
-    puts message.sid
-    end 
+        account_sid = ENV["ACCOUNT_SID"]
+        auth_token = ENV["AUTH_TOKEN"]
 
-    # def call
-    #   @call = @client.api.account.calls.create(
-    #         from: '+16784338387',
-    #         to: '+16787046881',
-    #         url: 'http://demo.twilio.com/docs/voice.xml',
+        @client = Twilio::REST::Client.new(account_sid, auth_token)
 
-    #     )
+        call = @client.calls.create(
+            to: "+#{@number}",
+            from: "+16784338387",
+            url: "http://demo.twilio.com/docs/voice.xml")
+        puts call.to
+    end
 
-    # end
+
 end

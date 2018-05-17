@@ -4,7 +4,7 @@ import { Card, CardTitle, Button, Input, Modal, Icon } from 'react-materialize'
 import image from '../img/default_img.jpg'
 import EditContact from './EditContact'
 import styled from 'styled-components'
-
+import axios from 'axios'
 
 const Menu = styled.div`
 display: flex;
@@ -38,6 +38,26 @@ class Contact extends Component {
         }
     }
 
+    cleanNumber = (number) => {
+
+        let cleanNumber = number.replace(/[^\d]/g, '')
+
+        let arr = cleanNumber.split('')
+
+        if (arr[0] != 1) {
+            arr.unshift('1')
+        }
+
+        return arr.join('')
+    }
+
+    call = async () => {
+        const number = this.cleanNumber(this.props.contact.phone)
+
+        const response = await axios.post('/api/calls', { number })
+        console.log(response)
+    }
+
     render() {
         return (
             <div className='contact'>
@@ -61,7 +81,7 @@ class Contact extends Component {
                                 />
                                 : <div>
                                     <h5>{this.props.contact.contactType} Contact</h5>
-                                    <p>{this.props.contact.phone}</p>
+                                    <p onClick={this.call}>{this.props.contact.phone}</p>
                                     <p>{this.props.contact.email}</p>
                                     <p>{this.props.contact.address}</p>
                                 </div>}

@@ -23,7 +23,7 @@ Welcome to **dialr**, the world's best contact management app.  Simply log in or
 
 * User authentication with devise, omiauth 
 
-* ~~Clickable phone numbers for integrated twilio calls~~
+* Can make test calls using Twilio with one click (Twilio account currently hardcoded, can only make trial calls using twilio voice)
 
 * Search bar to find a contact by name
 
