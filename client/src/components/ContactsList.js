@@ -16,9 +16,9 @@ class ContactsList extends Component {
             <div>
 
                 {this.props.contacts.length > 0
-                    ? this.props.contacts.map((contact) => {
+                    ? this.props.contacts.map((contact, i) => {
                             return (
-                                <div>
+                                <div key={i}>
                                     <Contact contact={contact}
                                         deleteContact={this.props.deleteContact}
                                         key={contact.id}
