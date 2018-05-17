@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import { Card, CardTitle, Button, Input, Modal, Icon } from 'react-materialize'
+import { Card, CardTitle, Button, Modal, Icon } from 'react-materialize'
 import image from '../img/default_img.jpg'
 import EditContact from './EditContact'
 import styled from 'styled-components'

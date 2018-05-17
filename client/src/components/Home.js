@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
 import ContactsList from './ContactsList'
 import NavBar from './NavBar'
-import { Button, Icon, Card, CardTitle } from 'react-materialize'
 import NewContact from './NewContact'
-import axios from 'axios'
-import { userIsLoggedIn, setAxiosDefaults } from '../util/SessionHeaderUtil'
 import Search from './Search'
-import EditContact from './EditContact'
-import image from '../img/default_img.jpg'
-import { Link } from 'react-router-dom'
 import Type from './Type'
 
 

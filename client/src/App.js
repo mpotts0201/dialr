@@ -3,11 +3,8 @@ import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-d
 import SignUpLogIn from './components/SignUpLogIn'
 import axios from 'axios'
 import './App.css'
-import ContactsList from './components/ContactsList'
 import { clearAuthTokens, saveAuthTokens, setAxiosDefaults, userIsLoggedIn } from './util/SessionHeaderUtil'
-import NavBar from './components/NavBar'
 import Home from './components/Home'
-import ShowContact from './components/ShowContact'
 
 
 
